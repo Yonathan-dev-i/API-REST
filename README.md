@@ -136,10 +136,3 @@ sudo chown -R $USER:$USER .
 - **Build Tool**: Vite
 - **Package Manager**: npm
 
-## 📞 Soporte
-
-Si encuentras algún problema, por favor abre un [issue](https://github.com/Yonathan-dev-i/API-REST/issues) en el repositorio.
-
----
-
-**¡Listo!** 🎉 Ahora tu proyecto debería estar funcionando correctamente en tu entorno local.
