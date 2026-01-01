@@ -159,7 +159,3 @@ sudo chown -R $USER:$USER .
 - **Build Tool**: Vite
 - **Package Manager**: npm
 
-
----
-
-**¡Listo!** 🎉 Ahora tu proyecto debería estar funcionando correctamente en tu entorno local.
