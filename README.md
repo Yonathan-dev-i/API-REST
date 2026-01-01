@@ -42,8 +42,31 @@ Luego edita el archivo `.env` con tus configuraciones:
 # Ejemplo de configuración
 VITE_API_URL=http://localhost:3000
 PORT=3000
-# Agrega aquí tus API keys si es necesario
+
+# API Keys requeridas
+NEWS_API_KEY=tu_api_key_aqui
+TMDB_API_KEY=tu_api_key_aqui
 ```
+
+#### 🔑 Obtener las API Keys
+
+Para que los módulos de **Noticias** y **Películas** funcionen correctamente, necesitas crear tus propias API keys:
+
+**News API Key:**
+1. Visita [https://newsapi.org/](https://newsapi.org/)
+2. Regístrate gratis
+3. Copia tu API key
+4. Pégala en el archivo `.env` como valor de `NEWS_API_KEY`
+
+**TMDB API Key:**
+1. Visita [https://www.themoviedb.org/](https://www.themoviedb.org/)
+2. Crea una cuenta
+3. Ve a Configuración → API
+4. Solicita una API key (opción gratuita)
+5. Copia tu API key
+6. Pégala en el archivo `.env` como valor de `TMDB_API_KEY`
+
+> ⚠️ **Importante**: Sin estas API keys, los módulos de Noticias y Películas no funcionarán correctamente.
 
 ## ▶️ Ejecutar el Proyecto
 
@@ -101,7 +124,7 @@ Una vez que el proyecto esté ejecutándose:
 | `preview` | Previsualiza la versión de producción |
 | `lint` | Ejecuta el linter para revisar el código |
 
-## Solución de Problemas
+## 🐛 Solución de Problemas
 
 ### Error de puerto ocupado
 
@@ -136,3 +159,7 @@ sudo chown -R $USER:$USER .
 - **Build Tool**: Vite
 - **Package Manager**: npm
 
+
+---
+
+**¡Listo!** 🎉 Ahora tu proyecto debería estar funcionando correctamente en tu entorno local.
