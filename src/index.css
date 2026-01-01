@@ -1,0 +1,232 @@
+@import "@fontsource/sora/400.css";
+@import "@fontsource/sora/500.css";
+@import "@fontsource/sora/600.css";
+@import "@fontsource/sora/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 192 91% 56%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 222 47% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 30% 18%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 142 71% 45%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 16%;
+    --input: 222 30% 16%;
+    --ring: 192 91% 56%;
+
+    --radius: 0.75rem;
+
+    /* Custom API accent colors */
+    --weather: 192 91% 56%;
+    --weather-glow: 192 91% 56%;
+    
+    --rickmorty: 142 71% 45%;
+    --rickmorty-glow: 142 71% 45%;
+    
+    --countries: 32 95% 55%;
+    --countries-glow: 32 95% 55%;
+    
+    --crypto: 280 68% 60%;
+    --crypto-glow: 280 68% 60%;
+    
+    --pokemon: 45 100% 51%;
+    --exchange: 158 64% 52%;
+    --news: 0 84% 60%;
+    --movies: 262 83% 58%;
+    --pokemon-glow: 45 100% 51%;
+
+    /* Gradients */
+    --gradient-dark: linear-gradient(180deg, hsl(222 47% 6%) 0%, hsl(222 47% 4%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(222 47% 10% / 0.8) 0%, hsl(222 47% 8% / 0.6) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(192 91% 56%) 0%, hsl(192 91% 40%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(142 71% 35%) 100%);
+    
+    /* Glass effect */
+    --glass-bg: hsl(222 47% 10% / 0.6);
+    --glass-border: hsl(222 30% 20% / 0.5);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(222 47% 4% / 0.6);
+    --shadow-md: 0 8px 24px -4px hsl(222 47% 4% / 0.8);
+    --shadow-lg: 0 16px 48px -8px hsl(222 47% 4% / 0.9);
+    --shadow-glow-primary: 0 0 40px hsl(192 91% 56% / 0.3);
+    --shadow-glow-accent: 0 0 40px hsl(142 71% 45% / 0.3);
+
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 192 91% 56%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 47% 14%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 30% 16%;
+    --sidebar-ring: 192 91% 56%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--gradient-dark);
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glow-primary {
+    box-shadow: var(--shadow-glow-primary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--shadow-glow-accent);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--muted-foreground)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .api-card-weather {
+    --card-accent: var(--weather);
+    border-color: hsl(var(--weather) / 0.3);
+  }
+
+  .api-card-weather:hover {
+    border-color: hsl(var(--weather) / 0.6);
+    box-shadow: 0 0 30px hsl(var(--weather) / 0.2);
+  }
+
+  .api-card-rickmorty {
+    --card-accent: var(--rickmorty);
+    border-color: hsl(var(--rickmorty) / 0.3);
+  }
+
+  .api-card-rickmorty:hover {
+    border-color: hsl(var(--rickmorty) / 0.6);
+    box-shadow: 0 0 30px hsl(var(--rickmorty) / 0.2);
+  }
+
+  .api-card-countries {
+    --card-accent: var(--countries);
+    border-color: hsl(var(--countries) / 0.3);
+  }
+
+  .api-card-countries:hover {
+    border-color: hsl(var(--countries) / 0.6);
+    box-shadow: 0 0 30px hsl(var(--countries) / 0.2);
+  }
+
+  .api-card-crypto {
+    --card-accent: var(--crypto);
+    border-color: hsl(var(--crypto) / 0.3);
+  }
+
+  .api-card-crypto:hover {
+    border-color: hsl(var(--crypto) / 0.6);
+    box-shadow: 0 0 30px hsl(var(--crypto) / 0.2);
+  }
+
+  .api-card-pokemon {
+    --card-accent: var(--pokemon);
+    border-color: hsl(var(--pokemon) / 0.3);
+  }
+
+  .api-card-pokemon:hover {
+    border-color: hsl(var(--pokemon) / 0.6);
+    box-shadow: 0 0 30px hsl(var(--pokemon) / 0.2);
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
